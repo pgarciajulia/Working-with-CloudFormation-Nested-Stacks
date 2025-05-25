@@ -4,12 +4,11 @@
         "myStack" : {
 	       "Type" : "AWS::CloudFormation::Stack",
 	       "Properties" : { 
-              "TemplateURL" : "https://s3.amazonaws.com/s3-krj7t3s8o6xy/noretain.json",
+              "TemplateURL" : "https://s3.amazonaws.com/s3-krj7t3s8o6xy/noretain.json on main ",
               "TimeoutInMinutes" : "60"
-              
 	       }
         }
     }
+    
 }
 
-on main
