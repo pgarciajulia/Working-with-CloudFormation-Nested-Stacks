@@ -1,0 +1,13 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Resources:
+  FunctionOne:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: functionOne
+      Handler: function_one.lambda_handler
+      Runtime: python3.11
+      CodeUri: function-one/
+      MemorySize: 128
+      Timeout: 10
+
