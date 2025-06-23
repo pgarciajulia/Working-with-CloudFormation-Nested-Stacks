@@ -1,15 +1,12 @@
-import random
+import os
+import json
+import requests
+
 def lambda_handler(event, context):
+    msg = {'text': event['Records'][0]['Sns']['Message']}
+    headers = {'Content-Type': 'application/json'}
+    response = requests.post(os.environ['TEAMS_WEBHOOK_URL'], headers=headers, data=json.dumps(msg).encode('utf-8'))
     return {
-        "statusCode": 200,
-        "body": "Hello from Lambda Last Version 7.53"
+        'statusCode': 200,
+        'body': "Teams message sent!"
     }
-
-def fibonacci(n):
-    if n <= 1:
-        return n
-    return fibonacci(n - 1) + fibonacci(n - 2)
-
-for _ in range(3):
-    n = random.randint(1, 10)
-    print(fibonacci(n))
