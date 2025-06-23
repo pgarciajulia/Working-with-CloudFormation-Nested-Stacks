@@ -8,6 +8,8 @@ phases:
       - pip install aws-sam-cli
   build:
     commands:
+      - echo "Listing project root:"
+      - ls -R
       - sam build
       - sam deploy --stack-name multi-lambda-stack \
           --region us-east-1 \
