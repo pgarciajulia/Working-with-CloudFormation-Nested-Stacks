@@ -11,5 +11,4 @@ phases:
       - echo "Listing project root:"
       - ls -R
       - sam build
-      - sam package --template-file template.yaml --s3-bucket for-upload-pipelineus-east-1-d4e665bfbf45 --output-template-file packaged.yaml
-      - sam deploy --template-file packaged.yaml --stack-name multi-lambda-stack --region us-east-1 --capabilities CAPABILITY_IAM  --no-confirm-changeset --no-fail-on-empty-changeset
+      - sam deploy --stack-name multi-lambda-stack --region us-east-1 --s3-bucket for-upload-pipelineus-east-1-d4e665bfbf45 --capabilities CAPABILITY_IAM --no-confirm-changeset --no-fail-on-empty-changeset
