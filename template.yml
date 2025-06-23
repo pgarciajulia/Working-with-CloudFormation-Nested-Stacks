@@ -7,6 +7,7 @@ Resources:
       FunctionName: function-one
       CodeUri: ./function-one
       Handler: function-one.lambda_handler
+      Role: arn:aws:iam::730335455538:role/function-one
       Runtime: python3.11
       MemorySize: 128
       Timeout: 10
