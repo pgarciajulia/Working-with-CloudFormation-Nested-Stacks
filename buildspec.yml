@@ -11,7 +11,4 @@ phases:
       - echo "Listing project root:"
       - ls -R
       - sam build
-      - sam package --s3-bucket codepipeline-us-east-1-d4e665bfbf45-4909-8df2-a6ef250f3f62  --output-template-file packaged.yaml
-artifacts:
-  files:
-    - packaged.yaml
+      - sam deploy --stack-name multi-lambda-stack --region us-east-1 --s3-bucket codepipeline-us-east-1-d4e665bfbf45-4909-8df2-a6ef250f3f62 --capabilities CAPABILITY_IAM --no-confirm-changeset --no-fail-on-empty-changeset
