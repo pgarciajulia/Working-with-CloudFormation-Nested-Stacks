@@ -13,10 +13,9 @@ phases:
       - sam build
       - sam package \
           --template-file template.yaml \
-          --s3-bucket codepipeline-us-east-1-d4e665bfbf45-4909-8df2-a6ef250f3f62 \ 
+          --s3-bucket for-upload-pipelineus-east-1-d4e665bfbf45 \ 
           --output-template-file packaged.yaml
-          
-       - sam deploy \
+      - sam deploy \
           --template-file packaged.yaml \
           --stack-name multi-lambda-stack \
           --region us-east-1 \
