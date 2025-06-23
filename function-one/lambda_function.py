@@ -5,6 +5,8 @@ def lambda_handler(event, context):
         "body": "Hello from Lambda"
     }
 
+
+    
 def fibonacci(n):
     if n <= 1:
         return n
