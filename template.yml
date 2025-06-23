@@ -4,9 +4,9 @@ Resources:
   FunctionOne:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: functionOne
+      FunctionName: function-one
       CodeUri: ./function-one
-      Handler: lambda_function.lambda_handler
+      Handler: function-one.lambda_handler
       Runtime: python3.11
       MemorySize: 128
       Timeout: 10
