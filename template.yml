@@ -8,6 +8,11 @@ Resources:
       CodeUri: ./function-one
       Handler: function-one.lambda_handler
       Role: arn:aws:iam::730335455538:role/function-one
+      VpcConfig:
+        SecurityGroupIds:
+          - sg-0f6d76ca9b97faf8f
+        SubnetIds:
+          - subnet-0d0d606c4de67e15b 
       Runtime: python3.11
       MemorySize: 128
       Timeout: 10
