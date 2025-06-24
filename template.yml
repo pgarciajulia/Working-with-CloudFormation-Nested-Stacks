@@ -13,6 +13,9 @@ Resources:
           - sg-0f6d76ca9b97faf8f
         SubnetIds:
           - subnet-0d0d606c4de67e15b 
+      Environment:
+        Variables:
+          TEAMS_WEBHOOK_URL: "https://pwc.webhook.office.com/webhookb2/babd634f-32aa-40be-8061-fd1e1057fff6@513294a0-3e20-41b2-a970-6d30bf1546fa/IncomingWebhook/fededc872439430ea70c7f1a71ac9dc5/90517a6d-d674-46c5-abf0-878995bef829/V2kJfuIDW1EwFOFvr38c2k7Te-0tEFOo_V1dQVZmltYCI1"
       Runtime: python3.11
       MemorySize: 128
       Timeout: 10
