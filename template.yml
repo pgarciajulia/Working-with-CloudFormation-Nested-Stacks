@@ -20,4 +20,3 @@ Resources:
       MemorySize: 128
       Timeout: 10
       AutoPublishAlias: LastVersion
-
