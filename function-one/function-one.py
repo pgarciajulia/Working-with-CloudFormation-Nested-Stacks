@@ -4,6 +4,7 @@ import requests
 import boto3
 import random
 import string
+
 def lambda_handler(event, context):
     length = event.get("length", 12)
     random_string = ''.join(random.choices(string.ascii_letters + string.digits, k=length))
