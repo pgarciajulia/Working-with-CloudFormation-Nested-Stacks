@@ -11,7 +11,6 @@ from codeguru_profiler_agent import with_lambda_profiler
 def lambda_handler(event, context):
     length = event.get("length", 12)
     random_string = ''.join(random.choices(string.ascii_letters + string.digits, k=length))
-
     #ip = event.get("queryStringParameters", {}).get("ip")
     ip = "181.91.126.65"
     source = event.get("queryStringParameters", {}).get("source")
