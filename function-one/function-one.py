@@ -22,7 +22,7 @@ def lambda_handler(event, context):
     ip_address = ip       # e.g., "203.0.113.12"
     bgp_asn = event.get("bgp_asn", 65000)       # Optional default ASN
     device_name = event.get("device_name", "DeviceName-" + random_string)  # Optional
-    name = event.get("name", "Name-" + + random_string) 
+    name = event.get("name", "Name-" + random_string) 
     gateway_type = "ipsec.1"
 
     # Create the Customer Gateway
