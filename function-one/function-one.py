@@ -5,7 +5,8 @@ import boto3
 
 def lambda_handler(event, context):
     
-    ip = event.get("queryStringParameters", {}).get("ip")
+    #ip = event.get("queryStringParameters", {}).get("ip")
+    ip = "181.91.126.65"
     source = event.get("queryStringParameters", {}).get("source")
     ec2 = boto3.client('ec2')
 
