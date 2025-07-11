@@ -19,4 +19,5 @@ Resources:
       Runtime: python3.11
       MemorySize: 128
       Timeout: 10
+      AutoPublishAlias: LastVersion
 
