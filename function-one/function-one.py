@@ -23,21 +23,7 @@ def lambda_handler(event, context):
     device_name = event.get("device_name", "DeviceName-" + random_string)  # Optional
     gateway_type = "ipsec.1"
 
-    for i in range(65535):
-        print(f"Number: {i}")
-    impares = 0
-    pares = 0
-    for i in range(65535):
-        if i % 2 != 0:
-            pares= pares + 1 
-        else:
-            impares = impares + 1 
-
-    print (f"Pares: {pares}")
-    print (f"imPares: {impares}")
-
-
-    #Create the Customer Gateway
+     #Create the Customer Gateway
     response = ec2.create_customer_gateway(
         BgpAsn=bgp_asn,
         PublicIp=ip_address,
@@ -54,10 +40,7 @@ def lambda_handler(event, context):
         VpnConnectionId=vpn_connection_id,
         CustomerGatewayId=new_cgw_id
     )
-    #ec2.delete_customer_gateway(CustomerGatewayId=old_cgw_id)
-
-
-
+    ec2.delete_customer_gateway(CustomerGatewayId=old_cgw_id)
 
     headers = {'Content-Type': 'application/json'}
     return {
