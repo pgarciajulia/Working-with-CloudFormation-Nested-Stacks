@@ -49,9 +49,10 @@ def lambda_handler(event, context):
     headers = {'Content-Type': 'application/json'}
     return {
         'statusCode': 200,
-        "body": "All Done"
+        "body": "All done"
         #"body": json.dumps({
         #    'CustomerGatewayId': response['CustomerGateway']['CustomerGatewayId'],
         #    'State': response['CustomerGateway']['State']
+        #
         #})
     }
