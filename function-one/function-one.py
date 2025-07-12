@@ -37,13 +37,26 @@ def lambda_handler(event, context):
     print (f"imPares: {impares}")
 
 
-    # Create the Customer Gateway
-    #response = ec2.create_customer_gateway(
-    #    BgpAsn=bgp_asn,
-    #    PublicIp=ip_address,
-    #    Type=gateway_type,
-    #    DeviceName=device_name
-    #)
+    #Create the Customer Gateway
+    response = ec2.create_customer_gateway(
+        BgpAsn=bgp_asn,
+        PublicIp=ip_address,
+        Type=gateway_type,
+        DeviceName=device_name
+    )
+    new_cgw_id = response['CustomerGateway']['CustomerGatewayId']
+
+    vpn_connection_id = 'vpn-0f5932e652f2f47c0'
+    response = ec2.describe_vpn_connections(VpnConnectionIds=[vpn_connection_id])
+    old_cgw_id = response['VpnConnections'][0]['CustomerGatewayId']
+
+    response = ec2.modify_vpn_connection(
+        VpnConnectionId=vpn_connection_id,
+        CustomerGatewayId=new_cgw_id
+    )
+    ec2.delete_customer_gateway(CustomerGatewayId=old_cgw_id)
+
+
 
 
     headers = {'Content-Type': 'application/json'}
