@@ -25,12 +25,13 @@ def lambda_handler(event, context):
 
     for i in range(65535):
         print(f"Number: {i}")
-
+    impares = 0
+    pares = 0
     for i in range(65535):
         if i % 2 != 0:
             pares= pares + 1 
         else:
-            impares= impares + 1 
+            impares = impares + 1 
 
     print (f"Pares: {pares}")
     print (f"imPares: {impares}")
