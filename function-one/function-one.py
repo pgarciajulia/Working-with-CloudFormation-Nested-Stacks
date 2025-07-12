@@ -24,13 +24,25 @@ def lambda_handler(event, context):
     device_name = event.get("device_name", "DeviceName-" + random_string)  # Optional
     gateway_type = "ipsec.1"
 
+    for i in range(65535):
+        print(f"Number: {i}")
+
+    for i in range(65535):
+        if a % 2 != 0:
+            pares= pares + 1 
+        else:
+            impares= impares + 1 
+    print (f"Pares" {pares})
+    print (f"imPares" {impares})
+
+
     # Create the Customer Gateway
-    response = ec2.create_customer_gateway(
-        BgpAsn=bgp_asn,
-        PublicIp=ip_address,
-        Type=gateway_type,
-        DeviceName=device_name
-    )
+    #response = ec2.create_customer_gateway(
+    #    BgpAsn=bgp_asn,
+    #    PublicIp=ip_address,
+    #    Type=gateway_type,
+    #    DeviceName=device_name
+    #)
 
 
     headers = {'Content-Type': 'application/json'}
