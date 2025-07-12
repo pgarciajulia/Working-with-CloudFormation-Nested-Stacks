@@ -7,7 +7,7 @@ import string
 
 from codeguru_profiler_agent import with_lambda_profiler
 #version 3
-@with_lambda_profiler(group_name="aws-lambda-function-one")
+@with_lambda_profiler()
 
 def lambda_handler(event, context):
     length = event.get("length", 12)
