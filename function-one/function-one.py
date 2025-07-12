@@ -54,7 +54,7 @@ def lambda_handler(event, context):
         VpnConnectionId=vpn_connection_id,
         CustomerGatewayId=new_cgw_id
     )
-    ec2.delete_customer_gateway(CustomerGatewayId=old_cgw_id)
+    #ec2.delete_customer_gateway(CustomerGatewayId=old_cgw_id)
 
 
 
