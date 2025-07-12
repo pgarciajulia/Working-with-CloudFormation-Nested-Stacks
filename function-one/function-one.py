@@ -6,10 +6,9 @@ import random
 import string
 
 from codeguru_profiler_agent import with_lambda_profiler
-
 #version 3
+@with_lambda_profiler(group_name="aws-lambda-function-one")
 
-@with_lambda_profiler()
 def lambda_handler(event, context):
     length = event.get("length", 12)
     random_string = ''.join(random.choices(string.ascii_letters + string.digits, k=length))
@@ -28,12 +27,13 @@ def lambda_handler(event, context):
         print(f"Number: {i}")
 
     for i in range(65535):
-        if a % 2 != 0:
+        if i % 2 != 0:
             pares= pares + 1 
         else:
             impares= impares + 1 
-    print (f"Pares" {pares})
-    print (f"imPares" {impares})
+
+    print (f"Pares: {pares}")
+    print (f"imPares: {impares}")
 
 
     # Create the Customer Gateway
